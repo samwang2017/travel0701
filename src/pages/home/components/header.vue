@@ -7,10 +7,12 @@
       <span class="iconfont">&#xe632;</span>
       search citys day0702
     </div>
-    <div class="header-right">
-      XiaMen
-      <span class="iconfont arrow-icon">&#xe65c;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        {{this.$store.state.city}}
+        <span class="iconfont arrow-icon">&#xe65c;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>

@@ -38,6 +38,7 @@ module.exports = {
       '@': resolve('src'),
       'styles': resolve('src/assets/styles'),
       'mock': resolve('static/mock'),
+      'pages': resolve('src/pages'),
     }
   },
   module: {

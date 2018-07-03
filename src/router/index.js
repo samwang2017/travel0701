@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import homePage from '@/pages/home/home'
+import CityPage from '@/pages/city/city'
 Vue.use(Router)
 /* eslint-disable */
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'homePage',
       component: homePage
+    },
+    {
+      path: '/city',
+      name: 'City',
+      component: CityPage
     }
   ]
 })

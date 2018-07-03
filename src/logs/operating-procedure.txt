@@ -42,3 +42,4 @@ shift+alt+choose  the effet of sublime nulty row changes at once a time
 
 ??home>swiper no loop???
 ??icon why pages? 
+????list 咋么添加不了点击事件？？？
