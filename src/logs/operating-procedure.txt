@@ -1,0 +1,44 @@
+在本地git init webpack itemName ，之后git init 创建本地仓库，在github上新建一个项目，不使用readme 方便把本地的仓库传到github
+git remote add origin git@github.com:samwang2017/travel0701.git
+// here  travel0701.git is the repo created on github just now
+then git status to check the git status,then git add . to add files to local repo,
+then git commit -m "some comments",then git push -u origin master,then git push
+
+VS Code可以通过以下快捷键格式化代码
+Mac：Shift + Option + F
+windows：Shift + Alt + F
+
+
+Similar to Sublime's cmd+shift+d behaviour
+editor.action.copyLinesDownAction
+Shift+Option+Down and Shift+OptionUp
+
+双引号（double quotes）
+分号（semicolon）
+
+//found that vscode ctrl+s diff from shift+alt+f 
+ 
+
+ Alt + Up 向上移动行
+
+Alt + Down 向下移动行
+
+Shift + Alt + Up 向上复制行
+
+Shift + Alt + Down 向下复制行
+
+Ctrl + Shift + K 删除行
+
+Ctrl + Enter 下一行插入
+
+Ctrl + Shift + Enter 上一行插入
+
+// 以下为stylus配置
+"stylusSupremacy.insertColons": false, // 是否插入冒号
+"stylusSupremacy.insertSemicolons": false, // 是否插入分好
+"stylusSupremacy.insertBraces": false, // 是否插入大括号
+
+shift+alt+choose  the effet of sublime nulty row changes at once a time
+
+??home>swiper no loop???
+??icon why pages? 

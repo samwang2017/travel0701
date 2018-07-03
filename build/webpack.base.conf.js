@@ -36,6 +36,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'styles': resolve('src/assets/styles'),
+      'mock': resolve('static/mock'),
     }
   },
   module: {
@@ -46,7 +48,7 @@ module.exports = {
         loader: 'vue-loader',
         options: vueLoaderConfig
       },
-      {
+      { 
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
@@ -90,3 +92,4 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
