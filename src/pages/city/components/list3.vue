@@ -1,24 +1,27 @@
 <template>
-    <div class="list" ref="wrapper">
+    <div
+    class="list"
+    @click="handleClick"
+    ref="wrapper"
+    >
         <div>
             <div class="area">
-                <div class="title" >location</div>
+                <div class="title">location</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">{{this.$store.state.city}}</div>
+                        <div class="button">{{this.$store.state.city    }}</div>
                     </div>
                 </div>
             </div>
             <div class="area">
-                <div class="title"
-                >hot citys</div>
+                <div class="title">hotcitys</div>
                 <div class="button-list">
-                    <div class="button-wrapper"
-                    v-for="item of hotCities"
-                        :key="item.id"
-                        @click="saveHotCity(item.name)"
+                    <div
+                    class="button-wrapper"
+                    v-for="items of hotCities"
+                    :key="items.id"
                     >
-                        <div class="button">{{item.name}}</div>
+                        <div class="button">{{items.name}}</div>
                     </div>
                 </div>
             </div>
@@ -26,16 +29,16 @@
             class="area"
             v-for="(items,key) in cities"
             :key="key"
-            :ref="key"
             >
                 <div class="title">{{key}}</div>
                 <div class="item-list">
                     <div
-                    class="item"
+                    class="item-wrapper"
                     v-for="item of items"
                     :key="item.id"
-                    @click="saveHotCity(item.name)"
-                    >{{item.name}}</div>
+                    >
+                        <div class="item">{{item.name}}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,31 +46,20 @@
 </template>
 <script>
 import BScroll from 'better-scroll'
+
 export default {
   name: 'CityList',
   props: {
     hotCities: Array,
-    cities: Object,
-    letterPos: String
+    cities: Object
   },
   methods: {
-    saveHotCity (city) {
-      //   console.log(555)
-      //   console.log('???')
-      this.$store.dispatch('changeCity', city)
-      this.$router.push('/')
+    handleClick () {
+      console.log(88654)
     }
   },
   mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper, { click: true })
-  },
-  watch: {
-    letterPos () {
-      if (this.letterPos) {
-        const moveToElement = this.$refs[this.letterPos][0]
-        this.scroll.scrollToElement(moveToElement)
-      }
-    }
+    // this.scroll = new BScroll(this.$refs.wrapper)
   }
 }
 </script>
@@ -86,7 +78,7 @@ export default {
         line-height 0.54rem
         padding-left 0.2rem
         color #666
-        font-size 0.26rem
+        font-style 0.26rem
     .button-list
         padding 0.1rem 0.6rem 0.1rem 0.1rem
         overflow hidden
@@ -94,7 +86,7 @@ export default {
             width 33.3%
             float left
             .button
-                border 0.02rem solid #ccc
+                border 0.02rem solid #cccccc
                 padding 0.1rem 0
                 text-align center
                 margin 0.1rem

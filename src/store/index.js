@@ -7,14 +7,14 @@ export default new Vuex.Store({
     state: {
         city: 'Shantou'
     },
-    actions:{
-        changeCity(context,city){
-            context.commit('changedCity',city)
+    actions: {
+        changeCity(context, city) {
+            context.commit('changedCity', city)
         }
     },
-    mutations:{
-        changedCity(state,city){
-            state.city=city
+    mutations: {
+        changedCity(state, city) {
+            state.city = city
         }
     }
 })

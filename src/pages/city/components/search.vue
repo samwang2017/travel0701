@@ -1,28 +1,31 @@
 <template>
-    <div>
-        <div class="search">
-            <input
-            type="text"
-            placeholder="where you want to go"
-            class="search-input"
-            v-model="keyword"
-            >
-        </div>
-        <div class="search-content" v-show="showIF">
-            <ul>
-                <li
-                v-for="(item,index) of searchList"
-                class="search-item"
-                :key="index"
-                @click="searchSaveCity(item)"
-                >
-                    {{item}}
-                </li>
-            </ul>
-        </div>
+    <div ref="wrapper">
+      <div>
+          <div class="search">
+              <input
+              type="text"
+              placeholder="where you want to go"
+              class="search-input"
+              v-model="keyword"
+              >
+          </div>
+          <div class="search-content" v-show="showIF" ref="searchData">
+              <ul>
+                  <li
+                  v-for="(item,index) of searchList"
+                  class="search-item"
+                  :key="index"
+                  @click="searchSaveCity(item)"
+                  >
+                      {{item}}
+                  </li>
+              </ul>
+          </div>
+      </div>
     </div>
 </template>
 <script>
+import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
   props: {
@@ -37,8 +40,12 @@ export default {
   methods: {
     searchSaveCity (city) {
       this.$store.dispatch('changeCity', city)
-      console.log(885533)
+      // console.log(885533)
+      this.$router.push('/')
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.searchData, { click: true })
   },
   computed: {
     showIF () {
@@ -70,29 +77,29 @@ export default {
 @import '~styles/varibles.styl'
 
 .search
-    height 0.72rem
-    background $bgColor
+  height 0.72rem
+  background $bgColor
+  padding 0 0.1rem
+  .search-input
+    width 100%
+    height 0.62rem
+    box-sizing border-box
     padding 0 0.1rem
-    .search-input
-        width 100%
-        height 0.62rem
-        box-sizing border-box
-        padding 0 0.1rem
-        line-height 0.62rem
-        text-align center
-        border-radius 0.06rem
-        color #666666
+    line-height 0.62rem
+    text-align center
+    border-radius 0.06rem
+    color #666666
 .search-content
-    z-index 1
-    position absolute
-    top 1.58rem
-    left 0
-    right 0
-    bottom 0
-    background #eeeeee
-    .search-item
-        background #ffffff
-        color #666666
-        padding-left 0.2rem
-        line-height 0.62rem
+  z-index 10
+  position absolute
+  top 1.58rem
+  left 0
+  right 0
+  bottom 0
+  background #eeeeee
+  .search-item
+    background #ffffff
+    color #666666
+    padding-left 0.2rem
+    line-height 0.62rem
 </style>
